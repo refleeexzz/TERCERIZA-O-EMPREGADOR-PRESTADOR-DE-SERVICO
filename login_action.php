@@ -7,7 +7,6 @@ $password = $_POST['password'] ?? '';
 $ip = $_SERVER['REMOTE_ADDR'];
 $key = 'login_' . md5($ip . '_' . strtolower($email));
 if (!isset($_SESSION['logr'])) $_SESSION['login_blocked'] = [];
-// reCAPTCHA removido
 // Bloqueio por 10 minutos após 5 tentativas
 if (isset($_SESSION['login_blocked'][$key]) && $_SESSION['login_blocked'][$key] > time()) {
     $wait = $_SESSION['login_blocked'][$key] - time();
