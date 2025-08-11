@@ -12,7 +12,6 @@ if ($application_id) {
         WHERE ad_id = (SELECT ad_id FROM applications WHERE id = ?) AND id != ?
     ');
     $stmt->execute([$application_id, $application_id]);
-    // Layout bonito de confirmação
     ?>
     <!DOCTYPE html>
     <html lang="pt-br">
